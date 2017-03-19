@@ -1,0 +1,21 @@
+References: 
+http://stackoverflow.com/questions/17083502/how-to-perform-better-document-version-control-on-excel-files-and-sql-schema-fil
+
+Solution 1: http://git-scm.com/book/en/Customizing-Git-Git-Attributes#Binary-Files <<<<< Use this way
+
+[diff "xls"]
+    binary = true
+    textconv = /usr/bin/py_xls2txt
+[diff "pdf"]
+    binary = true
+    textconv = /usr/bin/pdf2txt
+[diff "doc"]
+    binary = true
+    textconv = /usr/bin/catdoc
+[diff "docx"]
+    binary = true
+    textconv = /usr/bin/docx2txt
+
+ Just type this command at .gitconfig, we can setup to show documents file in code section in git.
+
+ Solution 2: Make and delete .xml or other files to express change point. It can be tiresome way, even if we make program to do it. And also excel files can be work like xml files.
